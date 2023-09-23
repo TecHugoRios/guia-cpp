@@ -1,0 +1,1517 @@
+#include <iostream>
+
+//isso é um comentário de linha
+
+/*isso é um comentário
+    de 
+    bloco*/
+
+/*
+
+int main(){
+    std::cout << "hello world" << std::endl;
+    std::cout << "hello world" << "\n";
+    std::cout << "ola, mundo" << std::endl;
+    return 0;
+}
+
+ */
+
+//----------------------------------------------------------------------------------//
+
+/* int main(){
+
+    int x = 1; //   declaração de uma variável
+    int y = 3; //   declaração de outra variável
+    int soma = x + y; //    soma das duas variáveis criadas
+    std::cout << "A soma é " << soma; //    saida do texto com a soma
+
+    return 0;
+} */
+
+//----------------------------Tipos de variáveis--------------------------------//
+
+/* int main(){
+
+    //  integer (números inteiros)
+    int idade = 18;
+    int ano = 2023;
+
+    //  float (armazena dois decimais)
+    float dias = 7.5;
+
+    //  double (armazena mais de dois decimais)
+    double real = 5.34;
+
+    //  char (armazena apenas um caractere)
+    char inicial = 'H';
+    char cambio = '$';
+
+    //  boolean (tem apenas valor de verdadeiro ou falso)
+    bool luz = true;
+    bool energia = false;
+
+    //  string (variável que armazena uma sequência de texto)
+    std::string nome = "Hugo";
+    std::string dia = "Segunda";
+    std::string comida = "Pizza";
+
+    // std::cout << "o seu nome é " << nome << ", hoje é " << dia << " e você gosta de " << comida;
+
+    return 0;
+} */
+
+//--------------------------------Const-----------------------------------------//
+
+/* int main() {
+
+    //  const (especifica que o valor de uma variável é constante, ou seja, não vai ser alterada se for declarada novamente)
+    const double PI = 3.14159;
+    const double RAIO = 10;
+
+    //  raio = 5; // quando foi declarado essa variável novamente, o compilador avisa que ela ja foi declarada e não altera na conta.
+
+    const double CIRCUNFERENCIA = 2 * PI * RAIO;
+
+    // std::cout << CIRCUNFERENCIA; // Esse valor da 62.8318 originalmente
+
+    return 0;
+}
+ */
+
+//-------------------------------Namespaces------------------------------------//
+
+// Namespace (é uma solução para prevenir conflitos com nomes em grandes projetos e cada entidade precisa de um nome especifico)
+
+
+/* namespace primeiro{
+    int x = 1;
+}
+
+namespace segundo{
+    int x = 2;
+}
+
+int main (){
+    //  using namespace primeiro; // (faz o main usar o namespace primeiro declarado lá em cima)
+
+    int x = 0;
+
+    //  (Usa o x local do main) // std::cout << x;
+
+    // (Usa o x especificado do namespace primeiro) // std::cout << primeiro::x;
+
+    // (Usa o x especificado do namespace segundo) // std::cout << segundo::x;
+
+
+    return 0;
+}
+ */
+
+
+/* int main(){
+    // using namespace std; // (se o std for utilizado não é necessário colocar std antes do cout, por exemplo - deixa muito geral)
+    using std::cout; // (deixa mais especificado)
+
+    cout << "olá mundo";
+    string ola = "olá";
+
+    cout << "\n" << ola;
+
+    return 0;
+} */
+
+//----------------------------------Typedef-------------------------------//
+
+// typedef (é uma keyword usada para criar um nome adicional, ou seja, um novo identificador, ajuda com a leitura do código)
+
+/* #include <vector>
+
+// typedef std::vector<std::pair<std::string, int>> pairlist_t; // pairlist_t é o novo identificador desse código enorme que é o std::vector<std::pair<std::string, int>>
+
+// Outros exemplos:
+
+//  typedef std::string text_t;
+//  typedef int number_t;
+
+// Em vez de usar o typedef, é preferivel usar o "using" que funciona da mesma forma:
+
+using text_t = std::string;
+using number_t = int;
+
+int main(){
+
+    //pairlist_t pairlist; // aqui em vez de chamar o código enorme, eu chamo apenas o nome dele, que geralmente sempre terminar em "_t"
+
+    text_t nome = "hugo"; // aqui eu chamo a "string" que está identificada como "text_t"
+    number_t idade = 19; // aqui eu chamo a "int" que está identificada como "number_t"
+    std::cout << nome << "\n" << idade;
+
+    return 0;
+} */
+
+//------------------------------Operadores-Aritméticos---------------------------------//
+
+// Operadores aritméticos (Retorna o resultado de uma operação aritmética + - * /)
+
+/* int main(){
+
+    // double estudantes = 20;
+
+    //  SOMA
+    // estudantes =  20 + 1; // ou 
+    // estudantes += 1; // ou
+    // estudantes++ // para adicionar apenas 1.
+    
+
+    //  SUBTRAÇÃO
+    // estudantes = 20 - ; //  ou 
+    // estudantes -= 1; // ou 
+    // estudantes--; // para retirar apenas 1.
+    
+
+    // MULTIPLICAÇÃO
+    // estudantes = estudantes * 2; // ou
+    // estudantes *= 2;
+
+
+    //  DIVISÃO
+    // estudantes = estudantes / 2; //ou 
+    // estudantes /= 2; 
+
+
+    //  RESTO DA DIVISÃO 
+    // int restodivisao = estudantes % 2; // aqui mostra o resto da divisão de "estudantes" por 2 e guarda na variável "restodivisao" 
+
+
+    // EXPRESSÃO NUMÉRICA
+    // 1. Primeiro resolve o que está em parênteses
+    // 2. Depois a multiplicação e a divisão
+    // 3. Por fim, a adição e a subtração
+
+    //  Ex.:
+    //  double x = 3 + 2 - 1 + (3*3) / 2; // em expressões numéricas é melhor utilizar a variável "double" para ter certeza de que o valor obtido será exato
+    
+   
+    return 0; 
+}   */
+
+//------------------------------Conversão-de-dados/variavel-----------------------------------//
+
+/* // type conversion (Conversão do valor de um tipo de variável para outro, por exemplo de um integer para uma string)
+// Pode ser Implicita -> automática ou Explicita -> antes do valor, é necessário acrescentar qual o novo tipo de variável para a conversão
+
+int main(){
+
+    //  double x = 3.14;      //    Implicita
+    //  double y = (int) 3.14 //    Explicita
+
+    //  char x = 110;
+
+    //  std::cout << x; // Implicitamente irá converter a variável char em uma letra correspondente na tabela ASCII(n).
+
+    // Calculo de porcentagem:
+
+    int correto = 6;
+    int questoes = 10;
+    int porcentagem = correto/(double)questoes * 100; // double está entre parênteses em "questoes" para indicar que o tipo dessa variável mudou para double e agora pode ser lida como 10 e não como 1.
+    std::cout << porcentagem << "%";
+
+
+} */
+
+//------------------------------Capturar-o-input---------------------------if-statement------------------------//
+
+// cout << (Operador de saída)
+// cin >> (Operador de entrar)
+
+// Exemplo:
+
+/* int main(){
+
+    std::string nome;
+    int idade;
+
+    std::cout << "Qual o seu nome?\n";
+
+    std::cin >> nome;
+
+    para pegar a linha inteira usa a função getline ou seja, o código acima ficaria std::getline(std::cin >> std::ws, nome);
+
+    std::cout << "Bem vindo " << nome;
+    std::cout << ". Quantos anos voce tem?\n";
+    std::cin >> idade;
+
+    if (idade >= 18){
+        std::cout << "Voce e maior de idade, legal!";
+    } else {
+        std::cout << "Voce e menor de idade.";
+    }
+
+    return 0;
+} */
+
+//-------------------------------Funções-matemáticas-----------------------------//
+
+/* #include <cmath>
+
+int main(){
+
+    double x = 3.14;
+    double y = 4;
+    double z;
+
+    // z = std::max(x,y); // "std::max" pega o maior valor ao comparar variáveis
+    // z = std::min(x,y); // "std::min" pega o menor valor ao comparar variáveis
+
+    // z = pow(5,2); // "pow" faz o calculo da potência de dois valores
+
+    // z = sqrt(9); // "sqrt" faz a raiz de um número
+
+    // z = abs(-3); // "abs" faz o cálculo do módulo de um número
+
+    // z = round(x); // "round" arredonda o valor para inteiro mais próximo
+
+    // z = ceil(x); // "ceil" arredonda o valor para cima 
+    // z = floor(x); //"floor" arredonda o valor para baixo
+
+
+    std::cout << z;
+    return 0;
+} */
+
+//--------------------switches-------------------//
+
+/* int main(){
+
+    int mes;
+
+    std::cout << "Digite o mes(1-12): ";
+    std::cin >> mes;
+
+    switch (mes){ // a função "switch" serve para comparar os casos descritos e caso eles forem reais, executarem o código escrito para eles
+    case 1:
+        std::cout << "o mes escolhido e Janeiro";
+        break;
+    case 2:
+        std::cout << "o mes escolhido e Fevereiro";
+        break;
+    case 3:
+        std::cout << "o mes escolhido e Marco";
+        break;
+    case 4:
+        std::cout << "o mes escolhido e Abril";
+        break;
+    case 5:
+        std::cout << "o mes escolhido e Maio";
+        break;
+    case 6:
+        std::cout << "o mes escolhido e Junho";
+        break;
+    case 7:
+        std::cout << "o mes escolhido e Julho";
+        break;
+    case 8:
+        std::cout << "o mes escolhido e Agosto";
+        break;
+    case 9:
+        std::cout << "o mes escolhido e Setembro";
+        break;
+    case 10:
+        std::cout << "o mes escolhido e Outubro";
+        break;
+    case 11:
+        std::cout << "o mes escolhido e Novembro";
+        break;
+    case 12:
+        std::cout << "o mes escolhido e Dezembro";
+        break;
+
+    default:
+        std::cout << "escolha numeros entre 1 e 12";
+        break;
+    }
+
+    return 0;
+} */
+
+//--------------------------Operador-Ternário---------------------------//
+
+//é um operador que substitui o if/else
+
+/* int main(){
+    
+    // int nota = 80;
+
+    //  if (nota >= 60){
+    //        std::cout << "Voce passou";
+    //    } else {
+    //        std::cout << "Voce nao passou";
+    //    }
+
+    // nota >= 60 ? std::cout << "voce passou" : std::cout << "voce nao passou"; // esse é o operador ternário que substitui o if/else 
+
+    bool fome = true;
+
+    // fome == true ? std::cout << "voce esta com fome" : std::cout << "voce nao esta com fome";
+    // std::cout << (fome ? "voce esta com fome" : "voce nao esta com fome"); // Outra forma de escrever o codigo acima
+
+    return 0;
+
+} */
+
+//--------------------------------------Operadores-Lógicos----------------------------------------//
+
+    // && = checa se duas ou mais condições são verdadeiras, funciona como um "e".
+    // || = checa se pelo menos uma das condições são verdadeiras, funciona como um "ou".
+    // ! = inverte o estado lógico, por exemplo, se uma condição originalmente é true, com o "!" ela será false, funciona como "não é".
+
+/* using namespace std;
+
+int main(){
+
+//    double temp;
+
+//    cout << "*******************Detector de Febre*****************\n";
+//    cout << "Coloque sua temperatura: ";
+//    cin >> temp;
+
+//    if (temp <= 37 && temp >= 35.5){
+//        cout << "Voce nao esta com febre\n";
+//    } else if (temp > 37 && temp <= 38.5) {
+//      cout << "Voce esta febril\n";
+//    } else if (temp > 38.5){
+//        cout << "Voce esta com febre, va ao medico.\n";
+//    }
+//      cout << "*****************************************************";
+
+//---------------------------//
+
+//    double nota;
+
+//    cout << "Insira sua nota: ";
+//    cin >> nota;
+
+//    if (nota >= 9 || nota >=8){
+//        cout << "Parabens, voce foi aprovado";
+//    } else {
+//        cout << "Voce foi reprovado.";
+//    }
+
+//--------------------------//
+
+//    bool vazamento = true;
+
+//    if (!vazamento){  //Nesse caso, o "!" faz o compilador interpretar a variavel vazamento como false.
+//        cout << "Ta vazando!";
+//    } else {
+//        cout << "Nao ta vazando.";
+//    }
+
+     
+    return 0;
+} */
+
+//-------------------------------Métodos-Úteis-de-String-------------------------------//
+
+/* int main(){
+    std::string nome;
+
+    std::cout << "Digite seu nome: ";
+    std::getline(std::cin, nome); // função getline serve para armazenar o que está colocado dentro dela, como por exemplo essa linha vai armazenar o que for definido para a variável string "nome"
+
+    //  if (nome.length() < 8){ //Aqui é feita uma verificação do tamanho do que foi digitado, se for menor que 8 caracteres terá como saida o "cout" escrito
+    //        std::cout << "O seu nome devera ter mais de 8 caracteres, ";
+    //  } else {
+    //    std::cout << "Bem vindo " << nome;
+    //  }
+    
+    //  if(nome.empty()){ //A função .empty verifica o estado booleano do que foi inserido na variável "nome", se ela não tiver um valor preenchido é retornado uma resposta "false"
+    //       std::cout << "preencha corretamente.";
+    //    }
+
+    //  nome.clear(); // a função .clear limpa o que foi inserido na variável "nome" 
+    //  std::cout << "Ola" << nome;
+
+    //  nome.append("@gmail.com"); // a função .append junta algo pré-escrito no código ao que foi inserido na variável "nome"
+    //  std::cout<< "seu email sera " << nome << "?";
+
+    //  std::cout << nome.at(0); // a função .at(0,1,2,3,4,5,6,7,8,9,10...) mostra apenas o caractere escolhido para ter saida
+
+    //  nome.insert(4, "@"); // a função .insert insere um caractere qualquer após um caractere determinado no código
+    //  std::cout << nome;
+
+    //  std::cout << nome.find(" "); // a função .find serve para encontrar algum caractere determinado no valor da variável "nome"
+
+    //  nome.erase(0,4); // a função .erase apaga um intervalo de texto escolhido da string "nome"
+    //  std::cout << nome;
+
+    return 0;
+}
+
+ */
+
+//------------------------------------------Loops-While-----------------------------------------//
+
+/* int main(){
+
+    std::string nome;
+
+    while(nome.empty()){ // O while checa a condição diversas vezes até ela ser verdadeira, se ela não for verdadeira, o while irá repetir a mesma coisa, ou seja da para forçar o usuário a colocar algo.
+        std::cout << "Coloque seu nome: ";
+        std::getline(std::cin, nome);
+    }
+
+    std::cout << "Ola " << nome;
+
+
+
+
+    return 0;
+} */
+
+//------------------------------------------Loops-Do-While-----------------------------------------//
+
+//Loops Do While: Executa uma parte do código primeiro, e se a condição ainda for verdadeira, executa novamente
+
+/* int main(){
+
+    int numero;
+
+    do{
+        std::cout << "Escreva um numero positivo: ";
+        std::cin >> numero;
+    } while(numero < 0);
+
+    return 0;
+} */
+
+//------------------------------------------Loops-For-----------------------------------------//
+
+// Loops For: é uma forma de repetir um bloco de codigo em uma determinada quantidade de vezes 
+
+/* int main(){
+
+    for(int i = 0; i <=10; i+=3){
+        std::cout << i << '\n';
+    }
+
+    std::cout << "Feliz aniversario \n";
+
+
+
+    return 0;
+}
+
+ */
+
+//------------------------------------------Break-Continue-----------------------------------------//
+
+//  break: sai de um loop
+//  continue: pula a iteração atual
+/* 
+int main(){
+
+    for(int i = 0; i <= 20; i++){
+        if (i == 13)
+        {
+            break;
+        }
+        
+        std::cout << i << "\n";
+    }
+
+    for(int i = 0; i <= 20; i++){
+        if (i == 14)
+        {
+            continue;
+        }
+        
+        std::cout << i << "\n";
+    }
+
+
+
+    return 0;
+} */
+
+//------------------------------------------Nested-Loop-----------------------------------------//
+
+// Nested loop: é um loop dentro de outro loop
+
+/* int main(){
+
+
+    for (int i = 1; i <=3; i++)
+    {
+            for (int j = 1; j <= 10; j++){
+            std::cout << j << ' ';
+
+        }
+        std::cout << '\n';
+    }
+
+    
+
+
+    return 0;
+} */
+
+//------------------------------------------Numeros-aleatórios-----------------------------------------//
+
+// a função srand cria um numero pseudo-aleatório, não certamente aleatório.
+/* 
+int main(){
+
+    srand(time(NULL)); // inicia o gerador de numero aleatorio
+
+    int num1 = (rand() % 6) + 1;
+    int num2 = (rand() % 6) + 1;
+    int num3 = (rand() % 6) + 1;
+
+    std::cout << num1 << '\n';
+    std::cout << num2 << '\n';
+    std::cout << num3 << '\n';
+
+
+
+    return 0;
+} */
+
+//------------------------------------------Gerador-de-eventos-aleatórios-----------------------------------------//
+
+/* #include <ctime>
+
+int main(){
+
+    srand(time(0));
+    int randNum = rand() % 5 + 1;
+
+    switch (randNum){
+    case 1:
+        std::cout << "Voce ganhou um camisa";
+        break;
+    
+    case 2:
+        std::cout << "Voce ganhou uma caneca";
+        break;
+        
+    case 3:
+        std::cout << "Voce ganhou um lanche gratis";
+        break;
+    }
+
+    return 0;
+} */
+
+//------------------------------------------Funções-----------------------------------------//
+
+// Function : é um bloco de código que pode ser utilizado novamente
+/* 
+void felizAniversario(std::string nome, int idade){ // função basica para ter como saida o "feliz aniversario"
+    std::cout << "Feliz aniversario para " << nome << " voce tem " << idade << " anos";
+      
+    
+}
+
+int main(){
+
+    std::string nome = "Hugo";
+
+    int idade = 19;
+
+    felizAniversario(nome, idade); // para chamar a função criada acima e para ela ser executada no codigo deve ser colocado "entre colchetes" depois do nome da função, o que estiver dentro dos colchetes serão argumentos necessários para a função saber do que tem dentro da principal função 
+
+    
+
+    return 0;
+
+} */
+
+//---------------------------------------------------Return-------------------------------------------------------//
+
+// return: retorna um valor  de uma função.
+
+// double quadrado(double largura);
+// double cubo(double largura);
+
+
+//    int main(){
+//
+//        double largura = 5.0;
+//        double area = quadrado(largura);
+//        double volume = cubo(largura);
+//
+//        std::cout << area << '\n';
+//        std::cout << volume << '\n';
+//
+//
+//        return 0;
+//    }
+//
+//    double quadrado(double largura){
+//        return largura * largura; 
+//    }
+//
+//    double cubo(double largura){
+//        return largura * largura * largura; 
+//   }
+
+//--------------------------------------------------Função-Overload-----------------------------------------------------------------//
+
+/* void fazerPizza();
+void fazerPizza(std::string sabor1, std::string sabor2);
+
+int main(){
+
+    fazerPizza("queijo", "presunto");
+
+
+
+    return 0;
+}
+
+void fazerPizza(){
+    std::cout << "Aqui esta a sua pizza\n";
+}
+
+void fazerPizza(std::string sabor1){ //O nome da função com um parametro é conhecido como assinatura de função
+    std::cout << "Aqui esta a sua pizza de " << sabor1 << '\n';
+}
+
+void fazerPizza(std::string sabor1, std::string sabor2 ){ 
+    std::cout << "Aqui esta a sua pizza de " << sabor1 << " e de " << sabor2 << '\n';
+} */
+
+//--------------------------------------------Escopos-Variáveis-----------------------------------------------------------------//
+
+// Variáveis locais: são variáveis declaradas dentro de uma função ou bloco {}
+// Variáveis globais: são variáveis declaradas fora de todas as funções
+/* 
+int meuNumero = 3
+
+void printNum();
+
+int main(){
+
+    int meuNumero = 1;
+
+    printNum();
+    std::cout << ::meuNumero << '\n';
+
+    return 0;
+}
+
+void printNum(){
+    int meuNumero = 2;
+    std::cout << meuNumero << '\n';
+} */
+
+//------------------------------------------------Array----------------------------------------------------------------------//
+
+// Array: é uma estrutura de dados que pode guardar multiplos valores, que podem ser acessados por um numero de identificação
+/* 
+int main(){
+
+    //  std::string carros[] = {"Camaro", "Mustang", "Fusca"};
+
+    //  std::cout << carros[0] << '\n';
+    //  std::cout << carros[1] << '\n';
+
+    //  std::string carros[3]; // tamanho configurado para ser de 3 valores
+
+    //  carros[0] = "Camaro";
+    //  carros[1] = "Mustang";
+    //  carros[2] = "Fusca";
+
+    return 0;
+} */
+
+//-----------------------------------------------Operador-sizeof()----------------------------------------------//
+
+// sizeof(): determina o tamanho em bytes de uma variável, tipo de data, classe, objeto...
+/* 
+int main(){
+
+
+    std::string nome = "Hugo";
+    double preco = 3.50;
+    char alfabeto = 'A';
+    bool estudante = true;
+    char alfabeto2[] = {'A','B','C','D'};
+
+    std::cout << sizeof(preco) << " bytes\n";
+    std::cout << sizeof(nome) << " bytes\n";
+    std::cout << sizeof(alfabeto) << " bytes\n";
+    std::cout << sizeof(estudante) << " bytes\n";
+    std::cout << sizeof(alfabeto2)/sizeof(alfabeto) << " elementos\n";
+
+
+    return 0;
+} */
+
+//-------------------------------------------Iterar-uma-array---------------------------------------------------//
+
+/* int main(){
+
+    std::string estudantes[] = {"Bob Esponja", "Patrick", "Lula Molusco", "Sandy"};
+
+    for (int i = 0; i < sizeof(estudantes)/sizeof(std::string); i++){ // Usando um loop for pode-se "chamar" todos os elementos de uma array sem digitar linha por linha da forma escrita a seguir, para que tenha uma adição "automatica" dos elementos basta dividir o tamanho da variavel pelo tamanho do tipo da variavel
+        std::cout << estudantes[i] << '\n';
+    }
+    
+
+    return 0;
+}
+
+ */
+
+//---------------------------------------------Loop-foreach-------------------------------------------//
+
+//Loop foreach: é um loop que facilita a travessia sobre um conjunto de dados iteráveis. (melhor que utilizar apenas o loop for)
+
+/* int main(){
+
+    std::string estudantes[] = {"Bob Esponja", "Patrick", "Lula Molusco", "Sandy"};
+
+    for (std::string estudante : estudantes){ //Ou seja, para cada "estudante"(elemento) da array estudantes
+        std::cout << estudante << '\n';
+    }
+
+
+    return 0;
+} */
+
+//------------------------------------Transformar-array-em-função-------------------------------------------//
+
+/* double pegarTotal(double precos[], int tamanho);
+
+int main(){
+
+    double precos[] = {49.90, 15.50, 14.50, 12};
+    int tamanho = sizeof(precos)/sizeof(precos[0]); //Nesse caso o tamanho da array é passada para a função como essa variável para que o loop for possa funcionar
+    double total = pegarTotal(precos, tamanho);
+    std::cout << total;
+
+
+    return 0;
+}
+
+double pegarTotal(double precos[], int tamanho){ // quando a array é passada para a função, a função não vai saber mais qual é o tamanho da array
+
+    double total = 0;
+
+    for (int i = 0; i < tamanho; i++){
+        total += precos[i];
+    }
+    
+    return total;
+    
+    
+} */
+
+//------------------------------------Procurar-por-um-elemento-em-uma-array-------------------------------------------//
+
+/* int procurarArray(std::string array[], int tamanho, std::string elemento);
+
+int main(){
+
+    std::string comidas[] = {"Pizza","Hamburguer", "batata frita"};
+    int tamanho = sizeof(comidas)/sizeof(comidas[0]);
+    int elemento;
+    std::string minhaComida;
+
+    std::cout << "Escolha um elemento para ser procurado: " << '\n';
+    std::getline(std::cin, minhaComida);
+
+    elemento = procurarArray(comidas, tamanho, minhaComida);
+
+    if (elemento != -1){
+        std::cout << minhaComida << " esta na posicao " << elemento;
+    } else {
+        std::cout << minhaComida << " Nao foi encontrado";
+    }
+    
+
+    return 0;
+}
+
+int procurarArray(std::string array[], int tamanho, std::string elemento){
+
+    for (int i = 0; i < tamanho; i++){
+        if (array[i] == elemento){
+            return i;
+        }
+    }
+    return -1;
+    
+} */
+
+//------------------------------------randomizar-uma-array-------------------------------------------//
+
+/* void aleatorio(int array[], int tamanho);
+
+int main(){
+
+    int array[] = {10,4,2,7,5,8,9,3,1};
+    int tamanho = sizeof(array)/sizeof(array[0]);
+
+    aleatorio(array, tamanho);
+
+    for (int elemento : array){
+        std::cout << elemento << ' ';
+    }
+
+    return 0;
+}
+
+void aleatorio(int array[], int tamanho){
+
+    int temp;
+
+    for (int i = 0; i < tamanho - 1; i++){
+        for (int j = 0; j < tamanho - i - 1; j++){
+            if(array[j] > array[j + 1]){
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp; 
+            }
+        }
+        
+    }
+    
+
+} */
+
+//------------------------------------Função-fill()-------------------------------------------//
+
+// fill(): preenche elementos com um valor especifico de preenchimento. fill(nome da array, nome da array + quantidade de elementos, elementos)
+/* 
+int main(){
+
+    // std::string comida[10] = {"pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza",}; // a função fill ira facilitar o processo de encher uma array
+
+    // std::string comida[100];
+    // fill(comida, comida + 100, "Pizza");
+
+
+    // const int tamanho = 150;                      }
+    // std::string comidas[tamanho];                 } Utilizando de maneira mais fácil a função fill, ou seja determinando a quantidade de elementos como uma variável constante para não ter que mudar nos dois lugares ao mesmo tempo.
+    // fill(comidas, comidas + tamanho, "Pizza");    }
+
+    const int tamanho = 100;                      
+    std::string comidas[tamanho];                 
+    fill(comidas, comidas + tamanho/2, "Pizza");  
+    fill(comidas + tamanho/2, comidas + (tamanho/2)*2, "Hamburguer");  
+
+
+    for (std::string comida : comidas){
+        std::cout << comida << '\n';
+    }
+
+
+
+    return 0;
+} */
+
+//------------------------------------Encher-uma-array-com-o-que-for-digitado-pelo-usuário-------------------------------------------//
+
+/* int main(){
+
+    std::string comidas[3];
+    int tamanho = sizeof(comidas)/sizeof(comidas[0]);
+    std::string temp;
+
+
+    for (int i = 0; i < tamanho; i++){
+        std::cout << "Insira comidas que voce gosta ou 'q' para sair * " << i << ": ";
+        std::getline(std::cin, temp);
+        if(temp == "q"){
+            break;
+        } else{
+            comidas[i] = temp;
+        }
+    }
+
+    std::cout << "Voce gosta das comidas a seguir: \n";
+
+    for (int i = 0; !comidas[i].empty(); i++){
+        std::cout << comidas[i] << " ";
+    }
+
+    return 0;
+} */
+
+//------------------------------------Arrays-multidimensionais-------------------------------------------//
+
+// Arrays multidimensionais: são arrays dentro de arrays, formando assim uma "grade" de elementos, com o primeiro valor sendo de linhas e o segundo de colunas que essa array vai ter.
+
+/* int main(){
+
+    std::string carros[][3] = {{"Mustang", "Escape", "F-150"},
+                              {"Corvette", "Equinox", "Silverado"},
+                              {"Challenger", "Durango", "Ram 1500"}};
+
+
+    int linhas = sizeof(carros)/sizeof(carros[0]);
+    int colunas = sizeof(carros[0])/sizeof(carros[0][0]);
+
+    for (int i = 0; i < linhas; i++){      // para iterar a array é utilizado um loop dentro de outro
+        for (int j = 0; j < colunas; j++){
+            std::cout << carros[i][j] << ' ';
+        }
+        std::cout << '\n';
+    }
+
+    // std::cout << carros[0][0] << " ";
+    // std::cout << carros[0][1] << " ";   // primeira linha
+    // std::cout << carros[0][2] << "\n";
+
+    // std::cout << carros[1][0] << " ";
+    // std::cout << carros[1][1] << " ";   // segunda linha
+    // std::cout << carros[1][2] << "\n";
+
+    // std::cout << carros[2][0] << " ";
+    // std::cout << carros[2][1] << " ";   // terceira linha
+    // std::cout << carros[2][2] << "\n";
+
+    return 0;
+} */
+
+//------------------------------------Endereços-de-memória-------------------------------------------//
+
+// Endereços de memória: é um local na memória que os dados são guardados, um endereço de memória pode ser acessado pelo operador &
+/* 
+int main(){
+
+    std::string nome = "hugo";
+    int idade = 19;
+    bool estudante = true;
+
+
+    std::cout << &nome << '\n';  //0xa9c17ffaf0 :esse é o endereço de memoria(em hexadecimal) onde a variavel "nome" está guardada na memória.
+    std::cout << &idade << '\n';  //  0x7f6cbff75c
+    std::cout << &estudante << '\n'; // 0x7f6cbff75b
+
+
+    return 0;
+} */
+
+//------------------------------------Passar-por-valor-vs-passar-por-referência-------------------------------------------//
+
+/* void trocar(std::string &x, std::string &y);
+
+int main(){
+
+    std::string x = "curativo";
+    std::string y = "agua";
+    
+    trocar(x,y);
+
+    std::cout << "x: " << x << '\n';
+    std::cout << "y: " << y << '\n';
+
+    return 0;
+}
+
+void trocar(std::string &x, std::string &y){ // Quando passamos por valores apenas são criadas cópias do valor da variáveis e da erro, para evitar isso basta passar para a função como a referência de onde essa variável está na memória acrescentando "&" antes da variável.
+    std::string temp;
+    temp = x;
+    x = y;
+    y = temp;
+} */
+
+//------------------------------------Parametro-Const-------------------------------------------//
+
+//Parâmetro const: é um parâmetro que só serve para ser lido evitando a modificação no parametro original, com ele o codigo fica mais seguro e conveniente sendo utilizado para referencias e pointers.
+
+/* void printInfo(const std::string nome, const int idade);
+
+int main(){
+
+    std::string nome = "Hugo";
+    int idade = 19;
+
+    printInfo(nome,idade);
+
+
+    return 0;
+}
+
+void printInfo(const std::string nome, const int idade){
+    nome = ""; // nesses casos o nome e idade continuaram com o mesmo valor da função principal devido o uso do const
+    idade = 0; //
+
+    std::cout << nome << '\n';
+    std::cout << idade << '\n';
+} */
+
+//------------------------------------Pointers-------------------------------------------//
+
+// Pointers: é uma variável que armazena o endereço na memória de outra variável.
+
+/* int main(){
+
+    std::string nome = "Hugo";
+    int idade = 19;
+    std::string pizzasGratis[5] = {"Pizza 1","Pizza 2","Pizza 3","Pizza 4","Pizza 5"};
+
+    std::string *pNome = &nome;
+    int *pIdade = &idade;
+    std::string *pPizzasGratis = pizzasGratis;
+
+    std::cout << *pNome;
+    std::cout << *pIdade;
+    std::cout << *pizzasGratis;
+
+    return 0;
+} */
+
+//------------------------------------Pointers-Nulos------------------------------------------//
+
+// Valor nulo: é um valor especial que significa que alguma coisa não tem valor, quando um pointer está com um valor nulo, esse pointer não está valendo nada. Pointers nulos (nullptr) são utilizados para determinar se um endereço foi enviado com sucesso para o pointer.
+
+/* int main(){
+
+    int *pointer = nullptr;
+    int x = 123;
+
+
+    pointer = &x;
+    
+    if (pointer == nullptr){
+        std::cout << "Endereco nao foi encontrado";
+    } else {
+        std::cout << "Endereco foi encontrado\n";
+        std::cout << *pointer;
+    }
+
+
+    return 0;
+} */
+
+//-----------------------------------Memória-Dinâmica-------------------------------------------//
+
+// Memoria Dinãmica: memória que é alocada depois do programa ser compilado e rodar. O operador 'new' é usado para alocar memória. É útil para quando não sabemos quando de memória vamos precisar, deixando assim o programa mais flexivel.
+/* 
+int main(){
+
+    // int *pNum = NULL;
+
+    // pNum = new int;
+
+    // *pNum = 19;
+
+    // std::cout << pNum << " Esse e o endereco\n";
+    // std::cout << *pNum << " Esse e o valor";
+
+    // delete pNum; //utilizado para limpar a memória e evitar vazamentos
+
+    //--------------------------------------------//
+
+    double *pNotas = NULL;
+    int tamanho;
+
+    std::cout << "Quantas notas voce quer colocar?: \n";
+    std::cin >> tamanho;
+
+    pNotas = new double[tamanho];
+
+    for(int i = 0; i < tamanho; i++){
+        std::cout << "Coloque a nota #" << i + 1 <<": ";
+        std::cin >> pNotas[i];
+    }
+
+    for (int i = 0; i < tamanho; i++){
+        std::cout << pNotas[i] << " ";
+    }
+
+    delete pNotas; 
+
+    return 0;
+} */
+
+//-------------------------------------Recursão-------------------------------------------//
+
+// Recursão: é uma tecnica de programação onde uma função invoca a si mesma quebrando um conceito complexo em passos simples e repetitivos.
+// iteração vs recursão:
+
+// vantagens = código menor e mais limpo;
+//             útil para algoritmos.
+
+
+// desvantagens = usa mais memória;
+//                mais devagar.
+
+
+//  Forma iterativa:
+
+        // void andar(int passos);
+
+        // int main(){
+
+        //     andar(50);
+
+
+
+
+        //     return 0;
+        // }
+
+
+        // void andar(int passos){
+        //     for (int i = 0; i < passos; i++){
+        //         std::cout << "Voce deu um passo\n";
+        //     }
+            
+        // }
+
+//  Forma recursiva:
+
+        // void andar(int passos);
+
+        // int main(){
+
+        //     andar(50);
+
+
+
+
+        //     return 0;
+        // }
+
+
+        // void andar(int passos){
+        //     if(passos > 0){
+        //         std::cout << "Voce deu um passo\n";
+        //         andar(passos - 1);
+        //     }
+            
+        // }
+
+//-------------------------------------Templates-de-função-------------------------------------------//
+
+// Templates de função: descreve como uma função vai parecer e pode ser usada para gerar tantas funções quanto necessárias.
+
+        // int max(int x, int y){               |
+        //     return (x > y) ? x : y;          |
+        // }                                    |
+     //                                         |
+        // double max(double x, double y){      |
+        //     return (x > y) ? x : y;          |-------> para evitar que seja necessário criar diversas funções como essas podemos simplificar utilizando os templates de função a seguir.
+        // }                                    |
+      //                                        |
+        // char max(char x, char y){            |
+        //     return (x > y) ? x : y;          |
+        // }                                    |
+        
+/* template <typename T, typename U> // fazendo isso podemos dizer que a função ira aceitar até 2 tipos de variáveis diferentes
+
+auto max(T x, U y){               
+    return (x > y) ? x : y;          
+}                        
+
+
+int main(){
+
+    std::cout << max(6.3,4) << '\n'; //vemos que aqui temos uma variável double e uma int.
+
+    return 0;
+}
+ */
+
+//-------------------------------------Estrutura-------------------------------------------//
+
+// Estrutura: é uma estrutura que agrupa variáveis relacionadas dentro dentro de um nome. As estruturas podem conter diferentes tipos de variáveis(string, int, double...)
+//            as variáveis nas estruturas são conhecidas como "membros" que podem ser acessadas com um '.' sendo um operador de acesso de um membro na classe.
+/* 
+struct estudante{
+    std::string nome;
+    double media;
+    bool aprovacao;
+};
+
+
+
+int main(){
+
+    estudante estudante1; //criamos uma variável para o estudante
+        estudante1.nome = "Hugo";
+        estudante1.media = 8.5;
+        estudante1.aprovacao = true;
+
+    estudante estudante2; //criamos uma variável para o estudante
+        estudante2.nome = "Steve Jobbs";
+        estudante2.media = 10;
+        estudante2.aprovacao = true;
+
+    estudante estudante3; //criamos uma variável para o estudante
+        estudante3.nome = "Elon Musk";
+        estudante3.media = 5;
+        estudante3.aprovacao = false;
+
+    std::cout << estudante1.nome << '\n';
+        std::cout << estudante1.media << '\n';
+            std::cout << estudante1.aprovacao << '\n' << '\n';
+
+    std::cout << estudante2.nome << '\n';
+        std::cout << estudante2.media << '\n';
+            std::cout << estudante2.aprovacao << '\n' << '\n';
+
+    std::cout << estudante3.nome << '\n';
+        std::cout << estudante3.media << '\n';
+            std::cout << estudante3.aprovacao << '\n' << '\n';
+        
+    return 0;
+} */
+
+//------------------------------------Passando-Estruturas-como-Argumentos------------------------------------------//
+
+
+/* struct Carro {
+    std::string modelo;
+    int ano;
+    std::string cor;
+};
+
+void printCarro(const Carro &carro);
+void pintarCarro(Carro &carro, const std::string &cor);
+
+int main() {
+    Carro carro1;
+    Carro carro2;
+
+    carro1.modelo = "Fusca"; 
+    carro1.ano = 1990;
+    carro1.cor = "Prata";
+
+    carro2.modelo = "Camaro"; 
+    carro2.ano = 2010;
+    carro2.cor = "Amarelo";
+
+    pintarCarro(carro1, "Vermelho");
+
+    printCarro(carro1);
+    printCarro(carro2);
+
+    return 0;
+}
+
+void printCarro(const Carro &carro) {
+    std::cout << "Modelo: " << carro.modelo << '\n';
+    std::cout << "Ano: " << carro.ano << '\n';
+    std::cout << "Cor: " << carro.cor << "\n\n";
+}
+
+void pintarCarro(Carro &carro, const std::string &cor) {
+    carro.cor = cor;
+}
+ */
+//------------------------------------enums------------------------------------------//
+
+// enums: um tipo de dados definido pelo usuário que consiste em pares de constantes inteiras nomeadas.
+
+/* enum Dia {segunda = 0, terca = 1, quarta = 2, quinta = 3, sexta = 4};
+
+int main(){
+
+    Dia hoje = segunda;
+
+    switch (hoje)
+    {
+    case segunda:
+        std::cout << "hoje e segunda\n";
+        break;
+    case terca:
+        std::cout << "hoje e terca\n";
+        break;
+    case quarta:
+        std::cout << "hoje e quarta\n";
+        break;
+    case quinta:
+        std::cout << "hoje e quinta\n";
+        break;
+    case sexta:
+        std::cout << "hoje e sexta\n";
+        break;
+    
+    default:
+        break;
+    }
+
+} */
+
+//------------------------------------Programação-Orientada-a-Objetos------------------------------------------//
+
+// Objeto: é uma coleção de atributos e metodos, eles podem ter caracteristicas e podem performar ações. Podem ser usados para imitar itens da vida real e são criados por uma classe que age como uma "blue-print";
+
+// É bem parecido com as estruturas porém existe os métodos, ou seja, ações que aquela classe pode fazer.
+/* 
+class Humano{
+    public:
+        std::string nome;
+        std::string profissao;
+        int idade;
+
+
+        //métodos:
+        void comer(){
+            std::cout << "Essa pessoa esta comendo";
+        }
+
+        void beber(){
+            std::cout << "Essa pessoa esta bebendo";
+        }
+
+        void dormir(){
+            std::cout << "Essa pessoa esta dormindo";
+        }
+};
+
+int main(){
+
+    Humano humano1;
+    humano1.nome = "Hugo";
+    humano1.profissao = "Cientista";
+    humano1.idade = 19;
+
+    std::cout << humano1.nome << '\n';
+    std::cout << humano1.profissao << '\n';
+    std::cout << humano1.idade << '\n';
+
+    humano1.comer();
+    humano1.beber();
+    humano1.dormir();
+
+    return 0;
+} */
+
+//------------------------------------Construtores------------------------------------------//
+
+// Construtores: é um método especial que é automaticamente chamado quando um objeto é instanciado. É util para juntar valores para atributos como argumentos. Facilita o processo de atribuir valores aos objetos.
+/* 
+class Estudante{
+    public:
+        std::string nome;
+        int idade;
+        double media;
+
+    Estudante(std::string nome, int idade, double media){
+        this ->nome = nome;
+        this ->idade = idade;
+        this ->media = media;
+
+    }
+
+};
+
+int main(){
+
+    Estudante estudante1("Hugo", 19, 7.9);
+    Estudante estudante2("Steve Jobbs", 50, 10);
+
+    std::cout << estudante2.nome << '\n';
+    std::cout << estudante2.idade << '\n';
+    std::cout << estudante2.media << '\n';
+} */
+
+//------------------------------------Sobrecarga-de-construtores-----------------------------------------//
+
+// Voce pode ter diversos construtores com o mesmo nome porem eles devem ter parametros diferentes
+
+/* class Pizza{
+    public:
+        std::string recheio1;
+        std::string recheio2;
+    
+    Pizza(){}
+
+    Pizza(std::string recheio1){
+        this -> recheio1 = recheio1;
+    }
+
+    Pizza(std::string recheio1, std::string recheio2){
+        this->recheio1 = recheio1;
+        this->recheio2 = recheio2;
+    }
+};
+
+int main(){
+
+    Pizza pizza1("Queijo");
+    Pizza pizza2("Calabresa", "Queijo");
+
+    std::cout << pizza2.recheio1 << '\n';
+    std::cout << pizza2.recheio2 << '\n';
+
+
+    return 0;
+} */
+
+//------------------------------------Getters-e-Setters-----------------------------------------//
+
+/* class Forno{
+    private: // com o private deixamos a classe imutável e o código seguro(getter)
+        int temperatura = 0;
+    public:
+
+    int pegarTemperatura(){
+        return temperatura;
+    }
+    
+    void setarTemperatura(int temperatura){ // deixa o atributo mutável.(setter)
+        if (temperatura < 0){
+            this->temperatura = 0;
+        } else if (temperatura >= 10){
+            this->temperatura = 10;
+        } else{
+            this->temperatura = temperatura;
+        }
+    }
+};
+
+int main(){
+
+    Forno forno;
+
+    std::cout << forno.pegarTemperatura();
+
+
+    return 0;
+}
+
+ */
+
+//------------------------------------Herança-----------------------------------------//
+
+// Herança: é uma classe que pode receber atributos e metodos de outra classe. Ajuda a reutilizar códigos similares dentro de multiplas classes.
+/* 
+class Animal{
+    public:
+        bool vivo = true;
+    void comer(){
+        std::cout << "Esse animal esta comendo\n";
+    }
+};
+
+class Cachorro : public Animal{
+    public:
+        void latir(){
+            std::cout << "Late!";
+        }
+        
+};
+
+int main(){
+
+    Cachorro cachorro;
+
+    std::cout << cachorro.vivo << '\n';
+    cachorro.comer();
+    cachorro.latir();
+
+
+    return 0;
+}
+ */
+
